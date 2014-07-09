@@ -91,7 +91,7 @@ function makeResume($in) {
       position: obj.title,
       website: '',
       startDate: makeDate(obj.startDate),
-      endDate: makeDate(obj.startDate, Boolean(obj.isCurrent)),
+      endDate: makeDate(obj.endDate, Boolean(obj.isCurrent)),
       summary: obj.summary,
       highlights: []
     }
