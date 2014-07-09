@@ -14,7 +14,7 @@ After building you can publish your resume using:
 ## Install
 
 ```
-git clone
+git clone https://github.com/mblarsen/resume-linkedin.git
 ```
 
 or
