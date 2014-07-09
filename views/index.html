@@ -1,0 +1,11 @@
+doctype html
+html(lang="en")
+    body
+        h1 JSON resume builder
+        if accessToken == null
+            p= accessToken
+            a(href="/oauth/linkedin/") Authorize with LinkedIn
+        else
+            p Hi
+             = ' ' + resume.bio.firstName
+             |, return to your console.
