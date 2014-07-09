@@ -45,3 +45,4 @@ Setup an application on [LinkedIn](https://www.linkedin.com/secure/developer).
 ## TODO
 
 * Error and validation handling.
+* Make it run headless.
