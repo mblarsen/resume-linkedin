@@ -12,13 +12,18 @@
     "express-session": "~1.6.3",
     "method-override": "~2.0.2",
     "consolidate": "~0.10.0",
-    "jade": "~1.3.1"
-  },
-  "devDependencies": {
+    "jade": "~1.3.1",
     "debug": "~1.0.2"
   },
+  "devDependencies": {
+  },
   "scripts": {
+    "start": "export DEBUG=resume ; node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mblarsen/resume-linkedin.git"
   },
   "keywords": [
     "json",

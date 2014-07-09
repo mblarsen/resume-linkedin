@@ -12,13 +12,11 @@ var cookieParser = require('cookie-parser'),
   bodyParser = require('body-parser'),
   methodOverride = require('method-override'),
   session = require('express-session'),
-  consolidate = require('consolidate'),
-  morgan = require('morgan');
+  consolidate = require('consolidate');
   
 app.engine('html', consolidate.jade);
 app.set('view engine', 'html');
 
-//app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(methodOverride());
@@ -162,7 +160,7 @@ app.get('/', function(req, res) {
           exitCode = 1;
         } else {
           var resumeString = JSON.stringify(resume, undefined, 2);
-          log('saving file resume.json:' + resumeString.lenght);
+          log('saving file resume.json:' + resumeString.length);
           fs.writeFileSync(__dirname + '/resume.json', resumeString);
           console.log('Done!');
         }
@@ -172,7 +170,7 @@ app.get('/', function(req, res) {
     });
   } else {
     console.log('Click Authorize with LinkedIn to continue');
-    res.render('index', { accessToken: req.session.accessToken, resume: resume });
+    res.render('index', { accessToken: req.session.accessToken, resume: resume, error: req.session.error, errorMsg: req.session.errorMsg });
   }
 });
 
@@ -185,10 +183,16 @@ app.get('/oauth/linkedin/callback', function(req, res) {
   console.log('Requesting access token');
   LinkedIn.auth.getAccessToken(res, req.query.code, function(err, data) {
     if (err) return console.error(err);
-    var result = JSON.parse(data); 
-    req.session.accessToken = result.access_token;
-    console.log('Access token acquired, getting profile');
-    log(req.session.accessToken);
+    log(data);
+    var result = JSON.parse(data);
+    if (typeof result.error !== 'undefined') {
+      req.session.error = result.error;
+      req.session.errorMsg = result.error_description;
+    } else {
+      req.session.accessToken = result.access_token;
+      console.log('Access token acquired, getting profile');
+      log(req.session.accessToken);
+    }
     return res.redirect('/');
   });
 });

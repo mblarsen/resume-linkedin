@@ -2,6 +2,8 @@ doctype html
 html(lang="en")
     body
         h1 JSON resume builder
+        if error
+            p= error + ': ' + errorMsg
         if accessToken == null
             p= accessToken
             a(href="/oauth/linkedin/") Authorize with LinkedIn
