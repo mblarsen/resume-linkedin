@@ -1,6 +1,6 @@
 {
   "name": "resume-linkedin",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Builds http://jsonresume.org/ JSON schema from your LinkedIn profile.",
   "main": "index.js",
   "dependencies": {
@@ -15,8 +15,7 @@
     "jade": "~1.3.1",
     "debug": "~1.0.2"
   },
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "scripts": {
     "start": "export DEBUG=resume ; node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
