@@ -3,7 +3,7 @@
 [![Dependencies](http://img.shields.io/david/mblarsen/resume-linkedin.svg
 )](https://david-dm.org/mblarsen/resume-linkedin) ![NPM version](http://img.shields.io/npm/v/resume-linkedin.svg)
 
-Builds a valid `resume.json` file based on http://jsonresume.org/ schema by drawing data from your LinkedIn profile.
+Builds a valid `resume.json` file based on http://jsonresume.org/ schema by drawing data from your LinkedIn profile ([example](http://registry.jsonresume.org/mblarsen)).
 
 After building you can publish your resume using:
 
