@@ -1,6 +1,6 @@
 {
   "name": "resume-linkedin",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Builds http://jsonresume.org/ JSON schema from your LinkedIn profile.",
   "main": "index.js",
   "dependencies": {
