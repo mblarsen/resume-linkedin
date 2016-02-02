@@ -1,4 +1,6 @@
-# JSON resume LinkedIn builder
+# [DEPRECATED] JSON resume LinkedIn builder
+
+**Deprecated due to changes in LinkedIn API**
 
 [![Dependencies](http://img.shields.io/david/mblarsen/resume-linkedin.svg
 )](https://david-dm.org/mblarsen/resume-linkedin) ![NPM version](http://img.shields.io/npm/v/resume-linkedin.svg)
